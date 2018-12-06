@@ -19,4 +19,8 @@ final class BookRepository {
         books.add(book);
         return book;
     }
+
+    void deleteAll() {
+        books.clear();
+    }
 }
