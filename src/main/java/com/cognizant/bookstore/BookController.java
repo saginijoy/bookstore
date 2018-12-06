@@ -9,8 +9,15 @@ import java.util.List;
 @RestController("/books")
 final class BookController {
 
+    private final BookRepository bookRepository;
+
+    BookController(final BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+
+    }
+
     @GetMapping
     List<Book> list(){
-        return Collections.emptyList();
+        return bookRepository.list();
     }
 }
